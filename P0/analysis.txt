@@ -1,0 +1,45 @@
+
+Task0 :
+  + worst case complexity: O(n)
+  + Algorithm:
+    - reading lines from .csv files: O(n)
+    - reading first line and last line from list: O(1)
+
+Task1:
+  + worst case complexity: O(n)
+  + Algorithm:
+    - reading lines from .csv files: O(n)
+    - iterating through caller list to count the unique telephone numbers: O(n)
+
+Task2:
+  + worst case complexity: O(n)
+  + Algorithm:
+    - reading lines from .csv files: O(n)
+    - iterating through caller list to find the longest duration: O(n)
+
+Task3:
+  + worst case complexity: O(nlogn)
+  + Algorithm
+    - iterating through caller list to classify the area codes: O(n)
+    - converting list to set to remove the duplicates entries : O(n) to O(n^2)
+      It could by O(n^2) when lost of hash-collision happens,
+      https://stackoverflow.com/questions/34642155/what-is-time-complexity-of-a-list-to-set-conversion
+    - converting set to list again so that it could be ordered and sorted : O(n)
+    - sorting the list to lexicographic order: O(nlogn)
+      https://stackoverflow.com/a/14434514
+    - iterating area codes to print it line by line: O(n)
+
+Task4:
+  + worst case complexity : O(nlogn)
+  + Algorithm:
+    - reading lines from .csv files: O(n)
+    - iterating through caller list to find the longest duration: O(n)
+    - set difference operation to remove the call-receiving, text-sending and text-receiving numbers from telemarketers: O(n)
+      https://www.geeksforgeeks.org/internal-working-of-set-in-python/
+    - sorting the list to lexicographic order: O(nlogn)
+      https://stackoverflow.com/a/14434514
+    - iterating area codes to print it line by line: O(n)
+
+
+extra:
+https://wiki.python.org/moin/TimeComplexity
