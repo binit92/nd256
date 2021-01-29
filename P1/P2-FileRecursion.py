@@ -31,5 +31,16 @@ def find_files(suffix, path):
             list_of_paths.append(find_files(suffix,full_path))
     return list_of_paths
 
+# test1
 list_of_paths = find_files(".c","D:\\nd256\P1\\testdir")
+print(list_of_paths)  # [['D:\\nd256\\P1\\testdir\\subdir1\\a.c'], [], [['D:\\nd256\\P1\\testdir\\subdir3\\subsubdir1\\b.c']], [], ['D:\\nd256\\P1\\testdir\\subdir5\\a.c'], 'D:\\nd256\\P1\\testdir\\t1.c']
+
+# test2 : testing on parent foler for testdir
+list_of_paths = find_files(".c","D:\\nd256\P1")
 print(list_of_paths)
+#[[['D:\\nd256\\P1\\testdir\\subdir1\\a.c'], [], [['D:\\nd256\\P1\\testdir\\subdir3\\subsubdir1\\b.c']], [], ['D:\\nd256\\P1\\testdir\\subdir5\\a.c'], 'D:\\nd256\\P1\\testdir\\t1.c']]
+
+# test 3
+list_of_paths = find_files(".c","D:\\nd256\P0")
+print(list_of_paths)
+# []

@@ -155,7 +155,7 @@ def huffman_encoding(text):
     return function.encode(), function
 
 def huffman_decoding(encoded_text, function):
-    print("huffman_decoding",encoded_text)
+    #print("huffman_decoding",encoded_text)
     decode_table = function.decode()
     decoded_text = ''
 
@@ -168,17 +168,20 @@ def huffman_decoding(encoded_text, function):
                 encoded_text = encoded_text[index:]
                 break
             index +=1
-    print("decoded text", decoded_text)
+    #print("decoded text", decoded_text)
     return decoded_text
 
 
 if __name__ == "__main__":
     codes = {}
 
+    #test 1
     a_great_sentence = "The bird is the word"
 
     print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
     print ("The content of the data is: {}\n".format(a_great_sentence))
+    # The content of the encoded data is: None00010None110None111None01None00011None100None101None0010None01None100None00000None01None00001None110None111None01None00110None00111None101None0010
+
 
     encoded_data, tree = huffman_encoding(a_great_sentence)
 
@@ -188,4 +191,27 @@ if __name__ == "__main__":
     decoded_data = huffman_decoding(encoded_data, tree)
 
     print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    # The size of the decoded data is: 69
     print ("The content of the encoded data is: {}\n".format(decoded_data))
+    #The content of the encoded data is: The bird is the word
+
+
+    #test2
+    new_sentence = " this include integer 0"
+    encoded_data, tree = huffman_encoding(new_sentence)
+    print(encoded_data)
+    #None11None101None1001None010None10000None11None010None0010None10001None00010None00011None00000None011None11None010None0010None101None011None00001None011None00110None11None00111
+
+    decoded_data = huffman_decoding(encoded_data, tree)
+    print(decoded_data)
+    #this include integer 0
+
+
+    #test3
+    new_sentence = " "
+    encoded_data, tree = huffman_encoding(new_sentence)
+    print(encoded_data)
+    #None
+    decoded_data = huffman_decoding(encoded_data, tree)
+    print(decoded_data)
+    #

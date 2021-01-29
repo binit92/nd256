@@ -35,7 +35,7 @@ def is_user_in_group(user, group):
             return True
 
     #else search on other subgroups of the group
-    # TODO: is there a chance of infinite loop here ? 
+    # TODO: is there a chance of infinite loop here ?
     for group in groups:
         if is_user_in_group(user,group):
             return True
@@ -52,7 +52,22 @@ child.add_group(sub_child)
 parent = Group("parent")
 parent.add_group(child)
 
-
+# test1
 print(is_user_in_group(sub_child_user,parent))
+# True
 print(is_user_in_group(sub_child_user,child))
+# True
+
+
+# test2 : group of groups 
 print(is_user_in_group(sub_child_user,sub_child))
+# True
+
+
+#test3
+
+g1 = Group("")
+u1 = ""
+g1.add_user(u1)
+print(is_user_in_group(u1,g1))
+#True
