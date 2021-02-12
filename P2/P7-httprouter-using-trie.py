@@ -95,3 +95,18 @@ print(router.lookup("/home")) # should print 'not found handler' or None if you 
 print(router.lookup("/home/about")) # should print 'about handler'
 print(router.lookup("/home/about/")) # should print 'about handler' or None if you did not handle trailing slashes
 print(router.lookup("/home/about/me")) # should print 'not found handler' or None if you did not implement one
+
+print(router.lookup("/home/exit"))
+print(router.lookup(""))
+print(router.lookup(" "))
+
+#test-outputs
+
+#root handler
+#not found handler
+#about handler
+#about handler
+#not found handler
+#not found handler
+#root handler
+#not found handler

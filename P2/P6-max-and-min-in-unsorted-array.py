@@ -32,3 +32,21 @@ l = [i for i in range(0, 10)]  # a list containing 0 - 9
 random.shuffle(l)
 
 print ("Pass" if ((0, 9) == get_min_max(l)) else "Fail")
+
+
+#edge-case
+val = [i for i in range(123,133)]
+random.shuffle(val)
+print(get_min_max(val))
+
+
+
+k = []
+random.shuffle(k)
+print(get_min_max(k))
+
+
+#outputs
+#Pass
+#(123, 132)
+#(None, None)

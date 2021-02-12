@@ -10,49 +10,24 @@ def sort_012(input_list):
     Args:
        input_list(list): List to be sorted
     """
-    merge_sort(input_list)
-    return input_list
-
-
-def merge_sort(arr):
-    length = len(arr)
-    large_reversal_count = 0
-    if length > 1:
-
-        mid = length // 2
-
-        LEFT_ARR = arr[:mid]
-        length_LEFT_ARR = len(LEFT_ARR)
-
-        RIGHT_ARR = arr[mid:]
-        length_RIGHT_ARR = len(RIGHT_ARR)
-
-        # splitting starts from these recursive calls
-        merge_sort(LEFT_ARR)
-        merge_sort(RIGHT_ARR)
-
-        # merging starts from here
-        i = j = k = 0
-        while i < length_LEFT_ARR and j < length_RIGHT_ARR:
-            if LEFT_ARR[i] < RIGHT_ARR[j]:
-                arr[k] = LEFT_ARR[i]
-                i+=1
-            else:
-                arr[k] = RIGHT_ARR[j]
-                j+=1
-            k+=1
-
-        # merge if any remaining items in left
-        while i <length_LEFT_ARR:
-            arr[k] = LEFT_ARR[i]
-            i+=1
-            k+=1
-
-        # merge if any remaining items in right
-        while j<length_RIGHT_ARR:
-            arr[k]= RIGHT_ARR[j]
-            j+=1
-            k+=1
+    print(input_list)
+    arr = input_list
+    start = 0
+    next = 0
+    end = len(arr) -1
+    while start <=end:
+        if arr[start] == 0:
+            arr[start] = arr[next]
+            arr[next] = 0
+            next+=1
+            start+=1
+        elif arr[start] == 2:
+            arr[start] = arr[end]
+            arr[end] = 2
+            end -= 1
+        else:
+            start += 1
+    return arr
 
 
 
@@ -69,3 +44,24 @@ def test_function(test_case):
 test_function([0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2])
 test_function([2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1])
 test_function([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2])
+
+# egecase
+test_function([])
+test_function([0, 1, 2])
+
+#output
+#[0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2]
+#[0, 0, 0, 1, 1, 1, 2, 2, 2, 2, 2]
+#Pass
+#[2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1]
+#[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+#Pass
+#[0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2]
+#[0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2]
+#Pass
+#[]
+#[]
+#Pass
+#[0, 1, 2]
+#[0, 1, 2]
+#Pass

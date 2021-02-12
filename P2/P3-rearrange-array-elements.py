@@ -90,3 +90,18 @@ def test_function(test_case):
 
 test_function([[1, 2, 3, 4, 5], [542, 31]])
 test_case = [[4, 6, 2, 5, 9, 8], [964, 852]]
+
+
+test_function([[], []])
+test_function([[2,1], [2,1]])
+
+#outputs
+#[1, 2, 3, 4, 5]
+#[1, 2, 3, 4, 5]
+#[542, 31]
+#Pass
+#Pass
+#[2, 1]
+#[1, 2]
+#[2, 1]
+#Pass

@@ -80,3 +80,21 @@ test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 8])
 test_function([[6, 7, 8, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+
+# edge-case
+#test_function([[], ])
+#test_function([[], 10])
+#test_function([[6, 7, 8, 1, 2, 3, 4]])
+
+#output
+#Pass
+#Pass
+#Pass
+#Pass
+#Pass
+#Traceback (most recent call last):
+#  File "P2-search-rotated-sorted-array.py", line 85, in <module>
+#    test_function([[], ])
+#  File "P2-search-rotated-sorted-array.py", line 72, in test_function
+#    number = test_case[1]
+#IndexError: list index out of range
