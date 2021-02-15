@@ -14,7 +14,8 @@ def sqrt(number):
         return number
 
     if number < 0:
-        return sqrt(number * (-1))
+        print("square root of negative number is not possible.")
+        return
 
     first = 1
     last = number
@@ -48,6 +49,7 @@ print ("Pass" if  (5 == sqrt(27)) else "Fail")
 print(sqrt(-64))
 print(sqrt(625))
 print(sqrt(-1))
+print(sqrt(10000000000000000))
 
 #output
 #Pass
@@ -55,6 +57,9 @@ print(sqrt(-1))
 #Pass
 #Pass
 #Pass
-#8
+#square root of negative number is not possible.
+#None
 #25
-#1
+#square root of negative number is not possible.
+#None
+#100000000

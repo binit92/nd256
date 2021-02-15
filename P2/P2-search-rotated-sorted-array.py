@@ -47,6 +47,8 @@ def find_pivot_using_binary_search(array,start, end):
 
 
 def linear_search(input_list, number):
+    if len(input_list) <1:
+        return -1
     for index, element in enumerate(input_list):
         if element == number:
             return index
@@ -68,8 +70,12 @@ def binary_search(array, start, end, target):
     return -1
 
 def test_function(test_case):
+    if len(test_case) <2:
+        print("invalid input")
+        return
     input_list = test_case[0]
     number = test_case[1]
+
     if linear_search(input_list, number) == rotated_array_search(input_list, number):
         print("Pass")
     else:
@@ -82,9 +88,9 @@ test_function([[6, 7, 8, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 10])
 
 # edge-case
-#test_function([[], ])
-#test_function([[], 10])
-#test_function([[6, 7, 8, 1, 2, 3, 4]])
+test_function([[], ])
+test_function([[], 10])
+test_function([[6, 7, 8, 1, 2, 3, 4]])
 
 #output
 #Pass
@@ -92,9 +98,3 @@ test_function([[6, 7, 8, 1, 2, 3, 4], 10])
 #Pass
 #Pass
 #Pass
-#Traceback (most recent call last):
-#  File "P2-search-rotated-sorted-array.py", line 85, in <module>
-#    test_function([[], ])
-#  File "P2-search-rotated-sorted-array.py", line 72, in test_function
-#    number = test_case[1]
-#IndexError: list index out of range
